@@ -32,6 +32,7 @@ define(function() {
 					for(var i = 0; i < shouts.length; i++) {
 						Base.addShout(shoutBox, shouts[i]);
 					}
+					app.processPage();
 					//Base.updateUserStatus(shoutBox);
 				}
 			});
