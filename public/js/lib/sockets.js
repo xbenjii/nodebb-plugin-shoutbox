@@ -10,7 +10,9 @@ define(function() {
 			handle: function(data) {
 				var shoutBox = sb.base.getShoutPanel();
 				if (shoutBox.length > 0) {
-					sb.base.addShout(shoutBox, data);
+					data.user.timestamp = new Date().toISOString();
+                    sb.base.addShout(shoutBox, data);
+                    app.processPage();
 					if (data.fromuid !== app.uid) {
 						if (sb.config.getSetting('notification') === 1) {
 							app.alternatingTitle(sb.config.messages.alert.replace(/%u/g, data.user.username));
