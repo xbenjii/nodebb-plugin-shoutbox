@@ -258,8 +258,8 @@ define(['string'], function(S) {
 			}
 		},
 		misc: {
-			register: function(shoutBox){
-				shoutBox.parent().parent().find('#shoutbox-users').off('click').on('click', this.handle);
+			register: function(){
+				sb.base.getUsersPanel().off('click').on('click', this.handle);
 			},
 			handle: function(){
 				$(this).find('.panel-body').toggleClass('hidden');
