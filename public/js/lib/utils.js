@@ -14,6 +14,7 @@ define(function() {
 		parseShout: function(shout, onlyText) {
 			var tpl = onlyText ? textTpl : shoutTpl;
 			shout.user.hasRights = shout.fromuid === app.uid || app.isAdmin === true;
+			shout.user.timestamp = new Date(parseInt(shout.timestamp)).toISOString();
 			return window.templates.parse(tpl, shout);
 		},
 		prepareShoutbox: function() {

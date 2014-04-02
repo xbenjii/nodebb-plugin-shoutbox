@@ -32,7 +32,7 @@ define(function() {
 					for(var i = 0; i < shouts.length; i++) {
 						Base.addShout(shoutBox, shouts[i]);
 					}
-					app.processPage();
+					$('span.timeago').timeago();
 					//Base.updateUserStatus(shoutBox);
 				}
 			});
