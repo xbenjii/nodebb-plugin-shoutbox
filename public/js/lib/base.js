@@ -86,10 +86,10 @@ define(function() {
 			socket.emit(sb.config.sockets.getUsers, { set: 'users:online', after: 0 }, function(err, data) {
 				var userCount = data.users.length;
 				var usernames = data.users.map(function(i) {
-					return (i.username === null ? 'Anonymous' : i.username);
+					return (i.username === null ? 'Anonymous' : '<a href="/user/' + i.username + '">' + i.username + '</a>');
 				});
-				var userString = usernames.join('; ');
-				Base.getUsersPanel().find('.panel-body').text(userString);
+				var userString = usernames.join(', ');
+				Base.getUsersPanel().find('.panel-body').html(userString);
 				Base.getUsersPanel().find('.panel-title').text('Users (' + userCount + ')');
 			});
 			if(Base.userCheck === 0) {
