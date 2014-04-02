@@ -86,7 +86,7 @@ define(function() {
 			socket.emit(sb.config.sockets.getUsers, { set: 'users:online', after: 0 }, function(err, data) {
 				var userCount = data.users.length;
 				var usernames = data.users.map(function(i) {
-					return (i.username === null ? 'Anonymous' : '<a href="/user/' + i.username + '">' + i.username + '</a>');
+					return (i.username === null ? 'Anonymous' : '<a href="/user/' + i.userslug + '">' + i.username + '</a>');
 				});
 				var userString = usernames.join(', ');
 				Base.getUsersPanel().find('.panel-body').html(userString);
