@@ -259,7 +259,6 @@ define(['string'], function(S) {
 		},
 		misc: {
 			register: function(){
-				$(sb.base.getUsersPanel).hide();
 				sb.base.getUsersPanel().off('click').on('click', this.handle);
 			},
 			handle: function(){
