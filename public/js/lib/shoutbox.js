@@ -15,7 +15,7 @@ define(function() {
 				s(Shoutbox); c(Shoutbox);
 				Shoutbox.utils.init(function() {
 					Shoutbox.base.load();
-					if (url === 'shoutbox') {
+					if (url === 'shoutbox' || url === '') {
 						module.showUserPanel();
 					}
 					if (typeof(callback) === 'function') {
