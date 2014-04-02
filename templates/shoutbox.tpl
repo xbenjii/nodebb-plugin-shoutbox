@@ -47,7 +47,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Users (0)</h3>
             </div>
-            <div class="panel-body hidden">
+            <div class="panel-body" style="display: none;">
 
             </div>
         </div>
